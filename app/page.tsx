@@ -22,7 +22,12 @@ export default function Home() {
   return (
     <div>
       {user === null && !waiting && <button onClick={signIn}>ログイン</button>}
-      {user && <button onClick={logout}>ログアウト</button>}
+      {user && (
+        <div>
+          <p>こんにちは、{user?.name}さん</p>
+          <button onClick={logout}>ログアウト</button>
+        </div>
+      )}
     </div>
   );
 }
